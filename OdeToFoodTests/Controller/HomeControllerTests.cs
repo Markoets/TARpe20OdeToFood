@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OdeToFood.Controllers;
 using System;
@@ -16,7 +17,9 @@ namespace OdeToFoodTests.Controller
         public void About()
         {
             //Arrange
-            HomeController controller = new HomeController();
+            using var logFactory = LoggerFactory.Create(builder => builder.AddConsole());
+            var logger = logFactory.CreateLogger<HomeController>();
+            HomeController controller = new HomeController(logger);
 
             //act
             ViewResult result = controller.About() as ViewResult;
