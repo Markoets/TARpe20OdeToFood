@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood", "OdeToFood\OdeToFood.csproj", "{F84BC3D1-A27A-42BC-97E7-71C0C783B7AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFoodTests", "OdeToFoodTests\OdeToFoodTests.csproj", "{EC0059BA-87B4-4576-8F67-BB63519CA572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFoodTests", "OdeToFoodTests\OdeToFoodTests.csproj", "{EC0059BA-87B4-4576-8F67-BB63519CA572}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
