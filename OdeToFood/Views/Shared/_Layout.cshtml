@@ -38,11 +38,13 @@
         </nav>
     </header>
     <div class="container">
-        @RenderSection("Featured" ,required: false)
+        @RenderSection("Featured", required: false)
         <main role="main" class="pb-3">
             @RenderBody()
+            <div>@await Component.InvokeAsync("BestReview")</div>
         </main>
     </div>
+
 
     <footer class="border-top footer text-muted">
         <div class="container">
