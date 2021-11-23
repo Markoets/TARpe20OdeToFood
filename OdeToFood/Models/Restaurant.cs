@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 
 namespace OdeToFood.Models
 {
-    public class RestaurantReview
+    public class Restaurant
     {
         public int Id { get; set; }
-        public int Rating { get; set; }
-        public string Body { get; set; }
-        public int RestaurantId { get; set; }
+        public string Name { get; set; }
+
+        public string City { get; set; }
+
+        public ICollection<RestaurantReview> Reviews{ get; set; }
     }
 }
