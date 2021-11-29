@@ -12,12 +12,20 @@ namespace OdeToFood.Data
         {
             if (!context.Restaurants.Any())
             {
-                context.Restaurants.Add(
+                _ = context.Restaurants.Add(
                     new Restaurant
                     {
                         Name = "Cinnamon Club",
                         City = "London",
                         Country = "UK",
+                        Reviews = new List<RestaurantReview>
+                        {
+                            new RestaurantReview()
+                            {
+                                Rating=10,
+                                Body = "Superlahe!"
+                            }
+                        }
                     });
                 context.Restaurants.Add(
                     new Restaurant
