@@ -22,7 +22,7 @@ namespace OdeToFood.Controllers
         }
 
 
-        public IActionResult Index()
+        public IActionResult Index(string searchTerm = null)
         {
             //var model =
             //    from r in _context.Restaurants
@@ -39,6 +39,7 @@ namespace OdeToFood.Controllers
                 .OrderByDescending(
                 r => r.Reviews.Average(review => review.Rating)
                 )
+                .Where(r=>searchTerm==null || r.Name.Contains(searchTerm))
                 .Take(10)
                 .Select(r => new RestaurantListViewModel
                 {
