@@ -40,7 +40,7 @@ namespace OdeToFood.Controllers
 
 
         [HttpPost]
-        public ActionResult Create(RestaurantReview review)
+        public ActionResult Create(int restaurantId, RestaurantReview review)
         {
             if (ModelState.IsValid)
             {

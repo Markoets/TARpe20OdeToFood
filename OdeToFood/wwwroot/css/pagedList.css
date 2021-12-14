@@ -64,6 +64,9 @@
     border-color: #dddddd;
 }
 
+.pagination > .disabled > a {
+    pointer-events: none;
+}
 .pagination-lg > li > a,
 .pagination-lg > li > span {
     padding: 10px 16px;
