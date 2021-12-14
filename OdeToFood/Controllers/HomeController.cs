@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace OdeToFood.Controllers
 {
@@ -37,7 +38,7 @@ namespace OdeToFood.Controllers
 
 
 
-        public IActionResult Index(string searchTerm = null)
+        public IActionResult Index(string searchTerm = null,int page = 1)
         {
             //var model =
             //    from r in _context.Restaurants
@@ -54,8 +55,8 @@ namespace OdeToFood.Controllers
                 .OrderByDescending(
                 r => r.Reviews.Average(review => review.Rating)
                 )
-                .Where(r=>searchTerm==null || r.Name.Contains(searchTerm))
-                .Take(10)
+                .Where(r => searchTerm == null || r.Name.Contains(searchTerm))
+                
                 .Select(r => new RestaurantListViewModel
                 {
                     Id = r.Id,
@@ -63,7 +64,7 @@ namespace OdeToFood.Controllers
                     City = r.City,
                     Country = r.Country,
                     CountOfReviews = r.Reviews.Count()
-                });
+                }).ToPagedList(page,10);
 
             if (Request.IsAjaxRequest())
             {
